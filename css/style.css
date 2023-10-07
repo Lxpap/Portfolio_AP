@@ -25,6 +25,19 @@ body {
   color: var(--light-color);
 }
 
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header a:hover {
+    color: var(--vibrant-color)
+}
+
+.header a:active {
+  color: var(--vibrant-color)
+}
+
 h1 {
   font-weight: 500;
 }
@@ -71,8 +84,13 @@ li {
   color: #949494;
 }
 
+#www2 {
+  color: var(--vibrant-color);
+}
+
 .page-wrapper {
   margin: 15px;
+  padding-top: 20px;
 }
 
 
@@ -88,39 +106,24 @@ li {
  
 }
 
-h2::before {
-  content: "";
+.h2-lines {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: auto;
-  height: 3px;
-  background: var(--vibrant-color);
-  left: auto;
-  top: auto;
-  position: relative;
+  width: 100%;
+  justify-content: center;
 }
-h2::after {
-  content: "";
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: auto;
+
+.h2-lines div{
+  background-color: var(--vibrant-color);
   height: 3px;
-  background: var(--vibrant-color);
-  right: auto;
-  top: auto;
-  position: relative;
+  margin-top: 18px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 45vw;
 }
 
 #about p {
   text-align: center;
 }
-
-
-
-
-
 
 h1,
 h2,
@@ -135,7 +138,48 @@ p {
   margin: 0;
 }
 
+.icons {
+  margin-top: 0px;
+  display: flex;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  margin: 20px;
+    
+}
 
+.icons img {
+  width: auto;
+  height: 50px;
+  
+}
+
+.contact-email, 
+.contact-linkedin,
+.contact-github {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.contact-email:hover .email-text,
+.contact-linkedin:hover .linkedin-text,
+.contact-github:hover .github-text {
+  opacity: 1;
+}
+
+.email-text,
+.linkedin-text,
+.github-text {
+  text-align: center;
+  margin-top: 0px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: var(--vibrant-color)
+}
 /* body {
   font-family: 'Poppins', sans-serif;
 } */
