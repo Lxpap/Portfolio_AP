@@ -47,7 +47,8 @@ li {
   justify-content: center;
   font-size: 3rem;
   font-weight: 500;
-  
+  /* image credit https://pin.it/1HRxYpf */
+  /* pink gradient overlay credit https://medium.com/@miguelznunez/how-to-easily-add-an-image-overlay-to-your-images-with-css-e354a79f530d */
 }
 
 .hero-banner span {
@@ -61,9 +62,65 @@ li {
   
 }
 
-#www {
-  color: var(--vibrant-color)
+#gear {
+  
+    text-shadow: none;
 }
+
+#www {
+  color: #949494;
+}
+
+.page-wrapper {
+  margin: 15px;
+}
+
+
+#about {
+ 
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+ 
+}
+
+h2::before {
+  content: "";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  height: 3px;
+  background: var(--vibrant-color);
+  left: auto;
+  top: auto;
+  position: relative;
+}
+h2::after {
+  content: "";
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: auto;
+  height: 3px;
+  background: var(--vibrant-color);
+  right: auto;
+  top: auto;
+  position: relative;
+}
+
+#about p {
+  text-align: center;
+}
+
+
+
+
+
 
 h1,
 h2,
