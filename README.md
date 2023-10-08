@@ -30,6 +30,12 @@ For the creation of this personal use website, visual assets have been sourced f
 * [LinkedIn icon - picons.me(iconfinder.com)](https://www.iconfinder.com/icons/104493/linkedin_icon)
 * [GitHub icon - Guillaume Beaulieu](https://thenounproject.com/icon/github-4289652/)
 
+Also, a big thank you to the AskBCS Learning Assistants that have helped me with various CSS tweaks, like using vw.
+
+Other sources used for learning:
+* [MDN](https://developer.mozilla.org/en-US/)
+* [StackOverflow](https://stackoverflow.com/)
+* [Claude.ai](https://claude.ai/)
 
 ## License
 
