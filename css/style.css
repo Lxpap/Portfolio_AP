@@ -2,13 +2,15 @@
   box-sizing: border-box;
 }
 
-/* Standardized colours for quickswap (hero banner excluded) */
+/* Standardized colours for quickswap (hero banner background excluded) */
 
 :root {
   --light-color: #EBEBEB;
   --dark-color: #000000;
   --vibrant-color: #EA3788;
 }
+
+/* General styling */
 
 body {
   margin: 0;
@@ -18,7 +20,13 @@ body {
   background-color: var(--light-color);
 }
 
+.page-wrapper {
+  margin: 15px;
+  padding-top: 20px;
+}
+
 /* Header styling */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -47,16 +55,6 @@ h1 {
 }
 
 /* Speech bubble credits: Tom Kuhlmann https://community.articulate.com/download/10-hand-drawn-square-speech-bubbles */
-
-@media (min-width: 600px) {
-  h1:hover::after {
-    content: url("../images/hi-icon-50.png");
-    max-height: 20px;
-    position: absolute;
-    right: -85px;
-    top: 0px;
-  }
-}
 
 ul {
   display: flex;
@@ -102,12 +100,7 @@ li {
   color: #949494;
 }
 
-
-.page-wrapper {
-  margin: 15px;
-  padding-top: 20px;
-}
-
+/* About section styling */
 
 #about {
 
@@ -154,7 +147,106 @@ li {
 
 /* work container styling */
 
+.work-container {
+  display: grid;
+  margin: 0 auto;
+  gap: 5px;
+  width: 95vw;
+  max-width: 1600px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "main-project main-project other-project1 other-project2"
+  "main-project main-project other-project3 other-project4";
 
+}
+
+
+#main-project {
+
+  grid-area: main-project;
+  
+}
+
+  #other-project1 {
+
+    grid-area: other-project1;
+    
+  }
+  
+  #other-project2 {
+
+    grid-area: other-project2;
+    
+  }
+  
+  #other-project3 {
+
+    grid-area: other-project3;
+   
+  }
+  
+  #other-project4 {
+
+    grid-area: other-project4;
+    
+  }
+
+  .work-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+  }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.overlay h3,
+.overlay p {
+  color: var(--light-color);
+  text-align: center;
+  margin: 10px;
+  font-size: 2vw;
+  margin: 2vw;
+}
+
+.overlay h3 {
+  color: var(--vibrant-color);
+}
+
+.work-section:hover .overlay {
+  opacity: 1;
+}
+
+.work-section:hover img {
+  transform: scale(1.1);
+}
+
+.work-section a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
 h1,
@@ -215,248 +307,71 @@ p {
   color: var(--vibrant-color)
 }
 
-/* ------------------ */
+/* Media queries for smaller screens below. Note: Due to the build, the kickoff is at 768px (tablet) but adjusts to smaller screens (phone) too. */
 
-.work-container {
-  border: 1px solid black;
-  display: grid;
-  gap: 5px;
-  margin: 0px auto;
-  height: 90vh;
-  width: 100%;
-  max-width: 1600px;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  "main-project main-project other-project1 other-project2"
-  "main-project main-project other-project3 other-project4";
-}
+@media (max-width: 768px) {
 
-#main-project {
-  grid-area: main-project;
-  background-image: url("../images/Horiseon2.png");
-  background-repeat: no-repeat;
-  width: 100%;
-}
+  .work-container {
+    display: grid;
+    margin: 0 auto;
+    gap: 5px;
+    width: 95vw;
+    max-width: 1600px;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "main-project main-project"
+    "main-project main-project"
+    "other-project1 other-project2"
+    "other-project3 other-project4";
+  
+  }
 
-#other-project1 {
-  grid-area: other-project1;
-  background-image: url("../images/willitstick.png");
-  background-repeat: no-repeat;
-  object-fit: contain;
-  width: auto;
-}
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; 
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
 
-#other-project2 {
-  grid-area: other-project2;
-  background-image: url("../images/github.png");
-  background-repeat: no-repeat;
-  object-fit: contain;
-  width: auto;
-}
-
-#other-project3 {
-  grid-area: other-project3;
-  background-image: url("../images/skunkwwworks.png");
-  background-repeat: no-repeat;
-  object-fit: contain;
-  width: auto;
-}
-
-#other-project4 {
-  grid-area: other-project4;
-  background-image: url("../images/venueguide.png");
-  background-repeat: no-repeat;
-  object-fit: contain;
-  width: auto;
-}
-
-
-/* body {
-  font-family: 'Poppins', sans-serif;
-} */
-
-/* Grid CSS */
-
-/* #heroGrid {
-  margin: 0px 5%;
-  display: grid;
-  min-height: 500px;
-  height: 70vh;
-  grid-template-rows: 75% 25%;
-  grid-template-columns: 75% 25%;
-  grid-template-areas:
-  "featuredProduct secondaryProduct"
-  "featuredProduct CTA";
-}
-
-#featuredProduct {
-  grid-area: featuredProduct;
-  background-image: url("../images/furniture1.png");
-}
-
-#secondaryProduct {
-  grid-area: secondaryProduct;
-  background-image: url("../images/furniture2.png");
-}
-
-#CTA {
-  grid-area: CTA;
-  background-image: url("../images/woodbg.png");
-  justify-content: space-around;
-  cursor: pointer;
-}
-
-.subHeading {
+  .overlay h3,
+  .overlay p {
+  color: var(--light-color);
+  text-shadow: 
+  1px 1px 0 #000,
+    -1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000;
   text-align: center;
-  border-bottom: 2px solid black;
-  width: 300px;
-  margin: 50px auto;
+  margin: 10px;
+  font-size: 4vw;
+  margin: 2vw;
+  }
+
+  .overlay h3 {
+    color: var(--vibrant-color);
+  }
+
 }
 
-#categoryGrid {
-  display: grid;
-  margin-top: 0px 5%;
-  grid-template-rows: 300px 300px 300px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-  "bookcases bedroom patio"
-  "couches couches patio"
-  "desks desks desks";
+/* Easter egg speech bubble dynamic placement */
+
+@media (min-width: 600px) {
+  h1:hover::after {
+    content: url("../images/hi-icon-50.png");
+    max-height: 20px;
+    position: absolute;
+    right: -85px;
+    top: 0px;
+  }
 }
-
-#bookcases {
-  grid-area: bookcases;
-  background-image: url("../images/bookcases@2x.png")
-}
-
-#bedroom {
-  grid-area: bedroom;
-  background-image: url("../images/beds@2x.png");
-}
-
-#couches {
-  grid-area: couches;
-  background-image: url("../images/couch@2x.png");
-}
-
-#patio {
-  grid-area: patio;
-  background-image: url("../images/patio@2x.png");
-}
-
-#desks {
-  grid-area: desks;
-  background-image: url("../images/desks@2x.png");
-}
-
-.categoryGridArea {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: 5px;
-  cursor: pointer;
-  display: grid;
-  align-content: end;
-}
-
-.heading {
-  background-color: rgba(0,0,0,0.7);
-  padding: 15px;
-  height: 25px;
-  color: white;
-  font-size: 18px;
-  border-bottom: 5px solid #FF6200;
-}
-
-
-#headline {
-  background-color: rgba(255,255,255,0.8);
-  border-bottom: 5px solid #FF6200;
-  position: absolute;
-  right: -50px;
-  top: 100px;
-  padding: 25px;
-  max-width: 550px;
-  z-index: 100;
-}
-
-.heroGridArea {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-items: center;
-  display: flex;
-  position: relative;
-}
-
-/* Category Grid CSS */
-
-
-
-
-/* Navigation CSS */
-/* CHECK OUT THIS CODE BELOW IF YOU WANT TO GET A REFRESHER ON FLEX */
-/* #navBar {
-  display: flex;
-  flex-direction: row;
-  margin: 0px 5%;
-}
-#navBar h1 {
-  width: 25%;
-  font-weight: 500;
-}
-#navigation {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: space-evenly;
-}
-#navigation p {
-  cursor: pointer;
-  text-decoration: none;
-}
-.icons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 25%;
-}
-.icons img {
-  margin: 15px;
-  cursor: pointer;
-}
-.highlight {
-  color: #FF6200;
-  font-weight: 700;
-}
-
-/* Typography CSS */
-
-/* h2 {
-  font-size: 60px;
-  margin: 0px 0px;
-  color: #FF6200;
-}
-
-h3 {
-  font-size: 32px;
-  font-weight: 300;
-  margin: 0px 0px;
-}
-
-h4 {
-  color: white;
-  font-weight: 400;
-  font-size: 22px;
-}
-
-
-#headline p {
-  max-width: 350px;
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0px 0px;
-  color: #636364;
-} */
