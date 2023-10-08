@@ -2,10 +2,12 @@
   box-sizing: border-box;
 }
 
+/* Standardized colours for quickswap (hero banner excluded) */
+
 :root {
---light-color: #EBEBEB;
---dark-color: #000000;
---vibrant-color: #EA3788;
+  --light-color: #EBEBEB;
+  --dark-color: #000000;
+  --vibrant-color: #EA3788;
 }
 
 body {
@@ -16,6 +18,7 @@ body {
   background-color: var(--light-color);
 }
 
+/* Header styling */
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +34,7 @@ body {
 }
 
 .header a:hover {
-    color: var(--vibrant-color)
+  color: var(--vibrant-color)
 }
 
 .header a:active {
@@ -39,7 +42,20 @@ body {
 }
 
 h1 {
+  position: relative;
   font-weight: 500;
+}
+
+/* Speech bubble credits: Tom Kuhlmann https://community.articulate.com/download/10-hand-drawn-square-speech-bubbles */
+
+@media (min-width: 600px) {
+  h1:hover::after {
+    content: url("../images/hi-icon-50.png");
+    max-height: 20px;
+    position: absolute;
+    right: -85px;
+    top: 0px;
+  }
 }
 
 ul {
@@ -51,8 +67,10 @@ li {
   margin: 0 5px;
 }
 
+/* hero banner styling */
+
 .hero-banner {
-  
+
   background-image: linear-gradient(0deg, #ff00997d, rgba(0, 0, 0, 0.5)), url(../images/headerimage2.png);
   height: 150px;
   display: flex;
@@ -65,28 +83,25 @@ li {
 }
 
 .hero-banner span {
-   
+
   color: var(--light-color);
   text-shadow:
     2px 2px 0 #000,
     -2px 2px 0 #000,
     -2px -2px 0 #000,
     2px -2px 0 #000;
-  
+
 }
 
 #gear {
-  
-    text-shadow: none;
+
+  text-shadow: none;
 }
 
 #www {
   color: #949494;
 }
 
-#www2 {
-  color: var(--vibrant-color);
-}
 
 .page-wrapper {
   margin: 15px;
@@ -95,7 +110,7 @@ li {
 
 
 #about {
- 
+
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -103,8 +118,18 @@ li {
   justify-content: center;
   align-items: center;
   overflow: hidden;
- 
+
 }
+
+#about img {
+  margin-top: 15px;
+}
+
+#www2 {
+  color: var(--vibrant-color);
+}
+
+/* Below .h2-lines styling applies to all sections */
 
 .h2-lines {
   display: flex;
@@ -112,7 +137,7 @@ li {
   justify-content: center;
 }
 
-.h2-lines div{
+.h2-lines div {
   background-color: var(--vibrant-color);
   height: 3px;
   margin-top: 18px;
@@ -122,8 +147,15 @@ li {
 }
 
 #about p {
+  margin-top: 15px;
   text-align: center;
+  max-width: 1600px;
 }
+
+/* work container styling */
+
+
+
 
 h1,
 h2,
@@ -138,23 +170,25 @@ p {
   margin: 0;
 }
 
+/* contact section styling */
+
 .icons {
   margin-top: 0px;
   display: flex;
-  width: 100%;
+  width: auto;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   margin: 20px;
-    
+
 }
 
 .icons img {
   width: auto;
   height: 50px;
-  
+
 }
 
-.contact-email, 
+.contact-email,
 .contact-linkedin,
 .contact-github {
   position: relative;
@@ -180,6 +214,65 @@ p {
   transition: opacity 0.3s;
   color: var(--vibrant-color)
 }
+
+/* ------------------ */
+
+.work-container {
+  border: 1px solid black;
+  display: grid;
+  gap: 5px;
+  margin: 0px auto;
+  height: 90vh;
+  width: 100%;
+  max-width: 1600px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "main-project main-project other-project1 other-project2"
+  "main-project main-project other-project3 other-project4";
+}
+
+#main-project {
+  grid-area: main-project;
+  background-image: url("../images/Horiseon2.png");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+#other-project1 {
+  grid-area: other-project1;
+  background-image: url("../images/willitstick.png");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: auto;
+}
+
+#other-project2 {
+  grid-area: other-project2;
+  background-image: url("../images/github.png");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: auto;
+}
+
+#other-project3 {
+  grid-area: other-project3;
+  background-image: url("../images/skunkwwworks.png");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: auto;
+}
+
+#other-project4 {
+  grid-area: other-project4;
+  background-image: url("../images/venueguide.png");
+  background-repeat: no-repeat;
+  object-fit: contain;
+  width: auto;
+}
+
+
 /* body {
   font-family: 'Poppins', sans-serif;
 } */
@@ -366,4 +459,4 @@ h4 {
   font-weight: 300;
   margin: 0px 0px;
   color: #636364;
-} */ 
+} */
