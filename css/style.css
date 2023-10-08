@@ -18,10 +18,12 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   line-height: 1.5;
   background-color: var(--light-color);
+  
 }
 
 .page-wrapper {
   margin: 15px;
+  width: 100%;
   }
 
 /* Header styling */
@@ -54,7 +56,6 @@ h1 {
   
 }
 
-/* Speech bubble credits: Tom Kuhlmann https://community.articulate.com/download/10-hand-drawn-square-speech-bubbles */
 
 ul {
   display: flex;
@@ -76,8 +77,7 @@ li {
   justify-content: center;
   font-size: 3rem;
   font-weight: 500;
-  /* image credit https://pin.it/1HRxYpf */
-  /* pink gradient overlay credit https://medium.com/@miguelznunez/how-to-easily-add-an-image-overlay-to-your-images-with-css-e354a79f530d */
+  
 }
 
 .hero-banner span {
@@ -150,7 +150,7 @@ li {
 .work-container {
   display: grid;
   margin: 0 auto;
-  padding-right: 10px;
+  /* padding-right: 10px; */
   gap: 5px;
   width: 100%;
   max-width: 1600px;
@@ -222,15 +222,18 @@ li {
   opacity: 0; 
   transition: opacity 0.3s ease;
   pointer-events: none;
+  
 }
 
 .overlay h3,
 .overlay p {
   color: var(--light-color);
   text-align: center;
-  margin: 10px;
+  margin: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
   font-size: 1rem;
-  margin: 2vw;
+   
 }
 
 .overlay h3 {
