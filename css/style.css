@@ -13,8 +13,8 @@
 /* General styling */
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-family: 'Montserrat', Arial, sans-serif;
   line-height: 1.5;
   background-color: var(--light-color);
@@ -22,8 +22,7 @@ body {
 
 .page-wrapper {
   margin: 15px;
-  padding-top: 20px;
-}
+  }
 
 /* Header styling */
 
@@ -52,6 +51,7 @@ body {
 h1 {
   position: relative;
   font-weight: 500;
+  
 }
 
 /* Speech bubble credits: Tom Kuhlmann https://community.articulate.com/download/10-hand-drawn-square-speech-bubbles */
@@ -150,8 +150,9 @@ li {
 .work-container {
   display: grid;
   margin: 0 auto;
+  padding-right: 10px;
   gap: 5px;
-  width: 95vw;
+  width: 100%;
   max-width: 1600px;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -196,6 +197,7 @@ li {
   .work-section {
     position: relative;
     overflow: hidden;
+  
   }
 
   .work-section img {
@@ -227,7 +229,7 @@ li {
   color: var(--light-color);
   text-align: center;
   margin: 10px;
-  font-size: 2vw;
+  font-size: 1rem;
   margin: 2vw;
 }
 
@@ -307,7 +309,7 @@ p {
   color: var(--vibrant-color)
 }
 
-/* Media queries for smaller screens below. Note: Due to the build, the kickoff is at 768px (tablet) but adjusts to smaller screens (phone) too. */
+/* Media queries for smaller screens below. Note: Due to the build, the kickoff is at 768px (tablet) but mostly adjusts to smaller screens (phone) too. */
 
 @media (max-width: 768px) {
 
@@ -360,6 +362,38 @@ p {
 
   .overlay h3 {
     color: var(--vibrant-color);
+  }
+
+  #about {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+
+}
+
+/* Additional media query to serve mobiles too as identified "breaking point" is at 555px */
+
+@media (max-width: 555px) {
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    text-wrap: nowrap;
+  }
+
+  .header h1 {
+    font-size: 1rem;
+  }
+
+  .header nav {
+    font-size: 0.8rem;
+  }
+
+  .hero-banner {
+    font-size: 1.5rem;
   }
 
 }
